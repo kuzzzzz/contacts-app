@@ -8,7 +8,7 @@ const App = () => {
       avatar:
         "https://media-exp1.licdn.com/dms/image/C5603AQGHHh-O8h0qPQ/profile-displayphoto-shrink_200_200/0?e=1597881600&v=beta&t=xo2BKzaFrAV_1KvMvh6D98WxAY8uCNBwB0rDWJuyP6A",
       name: "Atumah Daniel",
-      email: "jenny.han@notreal.com",
+      email: "atumahdaniel@gmail.com",
       age: 23
     },
     {

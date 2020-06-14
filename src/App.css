@@ -1,17 +1,17 @@
 .contact-card {
   display: flex;
-  flex-direction: ;
-  /* justify-content: center; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   color: #ffffff;
   background-color: rgb(93, 121, 197);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 10px 10px 25px -16px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  max-width: 500px;
-  max-height: 125px;
-  margin: 20px auto ;
-
+  max-width: 300px;
+  /* max-height: 125px; */
+  margin: 20px auto;
 }
 
 .contact-card p {
@@ -23,7 +23,18 @@ button {
   margin-left: 10px;
   margin-bottom: 5px;
 }
-img{
+img {
+  border-radius: 10px;
+  margin-bottom: 5px;
   width: 120px;
   height: 120px;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact-card {
+    flex-direction: row;
+    max-width: 500px;
+    max-height: 125px;
+    margin: 20px auto;
+  }
 }
