@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import ContactCard from "./Contact";
 
 const App = () => {
-  const contacts = [
+  const storedcontact = [
     {
       avatar:
         "https://media-exp1.licdn.com/dms/image/C5603AQGHHh-O8h0qPQ/profile-displayphoto-shrink_200_200/0?e=1597881600&v=beta&t=xo2BKzaFrAV_1KvMvh6D98WxAY8uCNBwB0rDWJuyP6A",
@@ -26,14 +26,31 @@ const App = () => {
       age: 23
     }
   ];
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=3")
+      .then(res => res.json())
+      .then(data => {
+        setContacts(data.results);
+      });
+  }, []);
   return (
     <>
-      {contacts.map(contact => (
+      {storedcontact.map(contact => (
         <ContactCard
           avatar={contact.avatar}
           name={contact.name}
           email={contact.email}
           age={contact.age}
+        />
+      ))}
+      {contacts.map(contact => (
+        <ContactCard
+          avatar={contact.picture.large}
+          name={contact.name.first + " " + contact.name.last}
+          email={contact.email}
+          age={contact.dob.age}
         />
       ))}
     </>
